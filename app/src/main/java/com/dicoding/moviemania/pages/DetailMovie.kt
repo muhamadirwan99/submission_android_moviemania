@@ -1,5 +1,6 @@
 package com.dicoding.moviemania.pages
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
@@ -39,6 +40,18 @@ class DetailMovie : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener{
            onBackPressedDispatcher.onBackPressed();
+        }
+
+        binding.actionShare.setOnClickListener {
+            val movieTitle = binding.tvTitle.text.toString()
+            val shareText = "Check this movie: $movieTitle"
+
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareText)
+                type = "text/plain"
+            }
+            startActivity(Intent.createChooser(sendIntent, null))
         }
 
         val movie = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

@@ -13,4 +13,5 @@
     <string name="change_password">Change Password</string>
     <string name="chevron_right">Chevron right</string>
     <string name="logout">Logout</string>
+    <string name="share_movie">Share Movie</string>
 </resources>
