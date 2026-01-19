@@ -38,8 +38,7 @@ class DetailMovie : AppCompatActivity() {
         }
 
         binding.btnBack.setOnClickListener{
-            finish()
-//            onBackPressedDispatcher.onBackPressed();
+           onBackPressedDispatcher.onBackPressed();
         }
 
         val movie = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

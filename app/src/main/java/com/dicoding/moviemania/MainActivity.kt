@@ -11,6 +11,7 @@ import com.dicoding.moviemania.adapter.ListMovieAdapter
 import com.dicoding.moviemania.databinding.ActivityMainBinding
 import com.dicoding.moviemania.model.DataMovie
 import com.dicoding.moviemania.pages.DetailMovie
+import com.dicoding.moviemania.pages.ProfileActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.aboutPage.setOnClickListener {
+            val moveToProfileIntent = Intent(this@MainActivity, ProfileActivity::class.java)
+            startActivity(moveToProfileIntent)
         }
 
         binding.rvMovie.setHasFixedSize(true)
