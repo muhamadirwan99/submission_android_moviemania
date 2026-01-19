@@ -1,5 +1,6 @@
 package com.dicoding.moviemania
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.moviemania.adapter.ListMovieAdapter
 import com.dicoding.moviemania.databinding.ActivityMainBinding
 import com.dicoding.moviemania.model.DataMovie
+import com.dicoding.moviemania.pages.DetailMovie
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
@@ -53,7 +55,9 @@ class MainActivity : AppCompatActivity() {
 
         listMovieAdapter.setonItemClickCallback(object : ListMovieAdapter.OnItemClickCallback{
             override fun onItemClicked(data: DataMovie) {
-                TODO("Not yet implemented")
+                val moveToDetailIntent = Intent(this@MainActivity, DetailMovie::class.java)
+                moveToDetailIntent.putExtra(DetailMovie.EXTRA_MOVIE, data)
+                startActivity(moveToDetailIntent)
             }
         })
     }

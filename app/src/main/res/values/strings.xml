@@ -2,4 +2,6 @@
     <string name="app_name">Movie Mania</string>
     <string name="icon_rating">Icon rating</string>
     <string name="poster_film">Poster Film</string>
+    <string name="back">Back</string>
+    <string name="background_image">Background Image</string>
 </resources>
