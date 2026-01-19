@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MovieMania</string>
+    <string name="app_name">Movie Mania</string>
+    <string name="icon_rating">Icon rating</string>
+    <string name="poster_film">Poster Film</string>
 </resources>

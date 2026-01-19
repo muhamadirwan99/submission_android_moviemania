@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    card_view:cardCornerRadius="14dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            card_view:shimmer_auto_start="true"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/md_theme_surfaceVariant" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <ImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic"
+            android:contentDescription="@string/poster_film"/>
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            style="@style/TextAppearance.App.TitleLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:text="Title Film" />
+
+        <ImageView
+            android:id="@+id/img_rate"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_star_rate_24"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_title"
+            android:contentDescription="@string/icon_rating"/>
+
+        <TextView
+            android:id="@+id/tv_item_rating"
+            style="@style/TextAppearance.App.BodyMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            card_view:layout_constraintBottom_toBottomOf="@+id/img_rate"
+            card_view:layout_constraintStart_toEndOf="@+id/img_rate"
+            card_view:layout_constraintTop_toTopOf="@+id/img_rate"
+            tools:text="Rating" />
+
+        <TextView
+            android:id="@+id/tv_item_description"
+            style="@style/TextAppearance.App.BodyMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie libero risus, eget varius eros efficitur in. Phasellus ut mi dui. Aenean laoreet orci sit amet sem dignissim congue. Suspendisse porttitor ultricies mi, vel feugiat elit pulvinar nec. Suspendisse nec ante risus. Phasellus ultricies in libero a rhoncus. Fusce id diam et magna fermentum eleifend. Donec a enim at ipsum ultricies ornare et at tortor."
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="1.0"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
+            card_view:layout_constraintTop_toBottomOf="@+id/img_rate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
