@@ -77,6 +77,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"

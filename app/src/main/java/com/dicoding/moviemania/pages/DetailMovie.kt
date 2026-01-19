@@ -3,6 +3,7 @@ package com.dicoding.moviemania.pages
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ import com.bumptech.glide.request.RequestListener
 import com.dicoding.moviemania.R
 import com.dicoding.moviemania.databinding.ActivityDetailMovieBinding
 import com.dicoding.moviemania.model.DataMovie
+import com.dicoding.moviemania.utils.toCompactNumber
 import com.dicoding.moviemania.utils.withDateFormat
 
 class DetailMovie : AppCompatActivity() {
@@ -36,7 +38,8 @@ class DetailMovie : AppCompatActivity() {
         }
 
         binding.btnBack.setOnClickListener{
-            onBackPressedDispatcher.onBackPressed();
+            finish()
+//            onBackPressedDispatcher.onBackPressed();
         }
 
         val movie = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -50,8 +53,12 @@ class DetailMovie : AppCompatActivity() {
             binding.tvTitle.text = movie.title
             binding.tvDate.text = movie.releaseDate.withDateFormat()
             binding.tvRate.text = movie.voteAverage.toString()
-            binding.tvPopularity.text = movie.popularity.toString()
+            binding.tvPopularity.text = movie.popularity.toCompactNumber()
             binding.tvDescription.text = movie.overview
+            binding.tvVoters.text =  this.getString(
+                R.string.format_vote_count,
+                movie.voteCount.toCompactNumber()
+            )
 
             val photoUrl = "https://image.tmdb.org/t/p/original${movie.backdropPath}"
             binding.shimmerViewContainer.startShimmer()
